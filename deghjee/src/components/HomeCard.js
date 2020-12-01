@@ -1,4 +1,4 @@
-import React,{useContext} from 'react';
+import React,{useContext,useEffect,useState} from 'react';
 import {DataContext} from './CardData.js';
 import CardN from './CardN.js';
 
@@ -7,12 +7,13 @@ import '../App.css';
 export default function HomeCard() {
   const value = useContext(DataContext)
   const [products] = value.products
+   const[limit,setLimit]=useState(8);
    
   return (
-    <div>
-      <div className="card">
+    <div className="card">
+      <div >
             
-                { products.map((val,index)=>{
+                { products.slice(0,limit).map((val,index)=>{
                    return(
                     <CardN
                     key={val._id}
@@ -31,8 +32,17 @@ export default function HomeCard() {
                    }
                 )
               }
+               </div>
+              <br/><br/>
+              <div style={{marginTop:"0%"}}>
+              {limit <= 14 ?
+              <button className="loadmore" onClick={()=>setLimit(limit+4)}>Load More</button>
+              :<br/>}
+              </div>
+              <br/>
               
-          </div>
+             
+         
     </div>
   )
 }

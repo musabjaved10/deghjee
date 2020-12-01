@@ -4,7 +4,10 @@ import {Container, Row, Col} from "react-bootstrap";
 import {SideNav} from "react-sidenav";
 import { ProSidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
 import 'react-pro-sidebar/dist/css/styles.css';
-import HomeCard from "./components/HomeCard.js"
+import HomeCard from "./components/HomeCard.js";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import AddProdConatiner from "./components/AddProdContainer.js"
 import {DataProvider} from './components/CardData.js';
 import SideNavPage from './components/SideNavbar';
 
@@ -13,7 +16,9 @@ function App() {
     <DataProvider>
     <div className="App">
       <br/>
-<HomeCard/>
+      <HomeCard/>
+      {/* <AddProdConatiner/> */}
+{/* <HomeCard/> */}
        {/* <Container fluid>
                 <Row>
                     <Col xs={2} id="sidebar-wrapper">      
